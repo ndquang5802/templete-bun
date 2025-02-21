@@ -9,7 +9,7 @@ export const transformInterceptor = (
       const response = await handler(req);
       return new Response(
         JSON.stringify({
-          sucess: true,
+          success: true,
           data: response,
           timestamp: new Date().toISOString(),
         }),
@@ -18,7 +18,7 @@ export const transformInterceptor = (
           headers: { "Content-Type": "application/json" },
         }
       );
-    } catch (error: any) {
+    } catch (error) {
       return httpExceptionFilter(req, error);
     }
   };

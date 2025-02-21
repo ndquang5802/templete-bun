@@ -2,7 +2,7 @@ import { HTTP_STATUS_CODE } from "../constant";
 import { HttpException } from "../exceptions/http.exception";
 import { logError } from "../utils/logger";
 
-export const httpExceptionFilter = (req: Request, error: Error) => {
+export const httpExceptionFilter = (req: Request, error: any) => {
   logError("Error processing request:", error);
 
   const { pathname } = new URL(req.url);
