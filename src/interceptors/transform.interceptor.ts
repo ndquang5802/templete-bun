@@ -1,5 +1,5 @@
 import { HTTP_STATUS_CODE } from "../constant";
-import { exceptionFilter } from "./exception";
+import { httpExceptionFilter } from "../filters/http-exception.filter";
 
 export const transformInterceptor = (
   handler: (req: Request) => Promise<Response>
@@ -19,7 +19,7 @@ export const transformInterceptor = (
         }
       );
     } catch (error: any) {
-      return exceptionFilter(req, error);
+      return httpExceptionFilter(req, error);
     }
   };
 };

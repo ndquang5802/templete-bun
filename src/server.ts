@@ -2,7 +2,7 @@ import { serve } from "bun";
 import { appRouter } from "./routes";
 import { ENV } from "./config/env.config";
 import { logInfo } from "./utils/logger";
-import { transformInterceptor } from "./utils/interceptor";
+import { transformInterceptor } from "./interceptors/transform.interceptor";
 
 const port = Number(ENV.PORT);
 
